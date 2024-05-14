@@ -1,10 +1,10 @@
 # Telegram Message Logger
 
 Questo script python è un logger di messaggi di Telegram che salva i messaggi ricevuti in chat, gruppi e canali in formato CSV e JSON. 
-Le chat vengono monitorate in tempo reale e i messaggi vengono salvati in un file di log.
-Le chat sono salvate in cartelle separate per tipologia (chat, gruppi, canali) e per ogni chat viene creata una cartella.
-I messaggi vengono salvati in file CSV e JSON. Inoltre, viene creata una cartella per ogni tipologia di allegato.
-Quando si riceve un messaggio con un allegato, viene salvato il percorso del file allegato e il file viene scaricato nella cartella corrispondente.
+- Le chat vengono monitorate in tempo reale e i messaggi vengono salvati in un file di log.
+- Le chat sono salvate in cartelle separate per tipologia (chat, gruppi, canali) e per ogni chat viene creata una cartella.
+- I messaggi vengono salvati in file CSV e JSON. Inoltre, viene creata una cartella per ogni tipologia di allegato.
+- Quando si riceve un messaggio con un allegato, viene salvato il percorso del file nel campo corrispondente.
 
 ## Requisiti
 
