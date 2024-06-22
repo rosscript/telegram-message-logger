@@ -10,7 +10,7 @@ Questo script python è un logger di messaggi di Telegram che salva i messaggi r
 
 - Python 3.7+
 - Telegram API ID e Hash
-- Librerie Python necessarie (vedi sotto)
+- Librerie Python necessarie (telethon / python-dotenv)
 
 ## Installazione
 
