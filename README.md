@@ -1,38 +1,42 @@
+
 # Telegram Message Logger
 
-Questo script python è un logger di messaggi di Telegram che salva i messaggi ricevuti e inviati in chat, gruppi e canali in formato CSV e JSON. 
-- Le chat vengono monitorate in tempo reale e i messaggi vengono salvati in un file di log.
-- Le chat sono salvate in cartelle separate per tipologia (chat, gruppi, canali) e per ogni chat viene creata una cartella.
-- I messaggi vengono salvati in file CSV e JSON. Inoltre, viene creata una cartella per ogni tipologia di allegato.
-- Quando si riceve un messaggio con un allegato, viene salvato il percorso del file nel campo corrispondente.
+This Python script is a Telegram message logger that saves received and sent messages in chats, groups, and channels in CSV and JSON formats.
+- Chats are monitored in real-time, and messages are saved in a log file.
+- Chats are saved in separate folders by type (chats, groups, channels), and a folder is created for each chat.
+- Messages are saved in CSV and JSON files. Additionally, a folder is created for each type of attachment.
+- When a message with an attachment is received, the file path is saved in the corresponding field.
 
-## Requisiti
+## Requirements
 
 - Python 3.7+
-- Telegram API ID e Hash
-- Librerie Python necessarie (telethon / python-dotenv)
+- Telegram API ID and Hash
+- Required Python libraries (telethon / python-dotenv)
 
-## Installazione
+## Installation
 
-1. **Clonare il repository**
+1. **Clone the repository**
 
    ```bash
    git clone https://github.com/rosscript/telegram-message-logger.git
    cd telegram-message-logger
+   ```
 
-2. **Creare un ambiente virtuale**
+2. **Create a virtual environment**
 
    ```bash
    python3 -m venv venv
    source venv/bin/activate # Linux / macOS
-   (.\venv\Scripts\activate) # Windows
+   .\venv\Scripts\activate # Windows
+   ```
 
-3. **Installare le librerie necessarie**
+3. **Install the required libraries**
 
    ```bash
-    pip install -r requirements.txt
+   pip install -r requirements.txt
+   ```
 
-4. **Configurare le variabili d'ambiente**
+4. **Configure the environment variables**
 
    ```bash
    cp .env.example .env
@@ -40,10 +44,11 @@ Questo script python è un logger di messaggi di Telegram che salva i messaggi r
    notepad .env # Windows
    ```
 
-   Modificare le variabili con i propri dati:
-   - `API_ID` e `API_HASH` (ottenibili su https://my.telegram.org)
+   Edit the variables with your own data:
+   - `API_ID` and `API_HASH` (available at https://my.telegram.org)
 
-5. **Eseguire il programma**
+5. **Run the program**
 
    ```bash
-    python app.py
+   python app.py
+   ```
