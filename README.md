@@ -24,7 +24,8 @@ Questo script python è un logger di messaggi di Telegram che salva i messaggi r
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate
+   source venv/bin/activate # Linux / macOS
+   (.\venv\Scripts\activate) # Windows
 
 3. **Installare le librerie necessarie**
 
@@ -35,7 +36,9 @@ Questo script python è un logger di messaggi di Telegram che salva i messaggi r
 
    ```bash
    cp .env.example .env
-   nano .env
+   nano .env # Linux / macOS
+   notepad .env # Windows
+   ```
 
    Modificare le variabili con i propri dati:
    - `API_ID` e `API_HASH` (ottenibili su https://my.telegram.org)

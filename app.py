@@ -31,7 +31,7 @@ async def handler(event):
         base_folder = os.path.join('./chats', chat_type)
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        print(f"Nuovo messaggio ricevuto da {username} in chat {chat_title} (ID: {chat_id}, Tipo: {chat_type})")
+        print(f"Nuovo messaggio di {username} in chat {chat_title} (ID: {chat_id}, Tipo: {chat_type})")
 
         # Gestione messaggio di testo con o senza media
         if event.message.message and event.message.media:
