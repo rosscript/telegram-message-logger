@@ -3,3 +3,4 @@ none.session
 error.log
 __pycache__
 chats/
+venv/
