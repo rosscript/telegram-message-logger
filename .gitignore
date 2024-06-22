@@ -1,3 +1,4 @@
 .env
 none.session
 error.log
+__pycache__
