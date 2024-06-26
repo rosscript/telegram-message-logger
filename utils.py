@@ -1,5 +1,3 @@
-# utils.py
-
 import os
 import csv
 import json
@@ -15,7 +13,7 @@ def create_folder_name(chat_id, chat_title):
 def save_message_csv(csv_file_path, message_data, include_header=False):
     file_exists = os.path.isfile(csv_file_path)
     with open(csv_file_path, 'a', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['sender_id', 'username', 'message_type', 'message', 'timestamp', 'media_path', 'chat_type', 'chat_name']
+        fieldnames = ['chat_id', 'sender_id', 'username', 'message_type', 'message', 'timestamp', 'media_path', 'chat_type', 'chat_name']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
         if not file_exists:
             writer.writeheader()
@@ -30,7 +28,7 @@ def save_message_json(json_file_path, message_data):
     with open(json_file_path, 'w', encoding='utf-8') as jsonfile:
         json.dump(messages, jsonfile, ensure_ascii=False, indent=4)
 
-def save_message(base_folder, folder_name, message, sender_id, username, message_type, timestamp, chat_type, chat_name, media_path=None):
+def save_message(base_folder, folder_name, message, sender_id, username, message_type, timestamp, chat_id, chat_type, chat_name, media_path=None):
     folder_path = os.path.join(base_folder, folder_name)
     os.makedirs(folder_path, exist_ok=True)
     
@@ -40,6 +38,7 @@ def save_message(base_folder, folder_name, message, sender_id, username, message
     global_json_file_path = os.path.join('./chats', 'messages.json')
 
     message_data = {
+        'chat_id': chat_id,
         'sender_id': sender_id,
         'username': username or 'unknown',
         'message_type': message_type,
@@ -47,7 +46,7 @@ def save_message(base_folder, folder_name, message, sender_id, username, message
         'timestamp': timestamp,
         'media_path': media_path,
         'chat_type': chat_type,
-        'chat_name': chat_name  # Aggiunta del nome della chat
+        'chat_name': chat_name
     }
 
     save_message_csv(csv_file_path, message_data)

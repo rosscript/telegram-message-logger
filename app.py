@@ -38,25 +38,25 @@ async def handler(event):
             media_type, file_name = get_media_type_and_filename(event.message.media)
             if file_name:  # Se il nome del file è valido
                 file_path = await event.message.download_media(file=f'./chats/{chat_type}/{folder_name}/{media_type}/{file_name}')
-                save_message(base_folder, folder_name, event.message.message, sender_id, username, f'{media_type.capitalize()} con testo', timestamp, chat_type, chat_title, file_path)
+                save_message(base_folder, folder_name, event.message.message, sender_id, username, f'{media_type.capitalize()} con testo', timestamp, chat_id, chat_type, chat_title, file_path)
             else:
-                save_message(base_folder, folder_name, event.message.message, sender_id, username, 'text', timestamp, chat_type, chat_title)
+                save_message(base_folder, folder_name, event.message.message, sender_id, username, 'text', timestamp, chat_id, chat_type, chat_title)
         
         # Gestione solo messaggio di testo
         elif event.message.message:
-            save_message(base_folder, folder_name, event.message.message, sender_id, username, 'text', timestamp, chat_type, chat_title)
+            save_message(base_folder, folder_name, event.message.message, sender_id, username, 'text', timestamp, chat_id, chat_type, chat_title)
         
         # Gestione solo media
         elif event.message.media:
             media_type, file_name = get_media_type_and_filename(event.message.media)
             if file_name:  # Se il nome del file è valido
                 file_path = await event.message.download_media(file=f'./chats/{chat_type}/{folder_name}/{media_type}/{file_name}')
-                save_message(base_folder, folder_name, media_type.capitalize(), sender_id, username, media_type, timestamp, chat_type, chat_title, file_path)
+                save_message(base_folder, folder_name, media_type.capitalize(), sender_id, username, media_type, timestamp, chat_id, chat_type, chat_title, file_path)
             else:
-                save_message(base_folder, folder_name, 'Unknown Media', sender_id, username, 'unknown', timestamp, chat_type, chat_title)
+                save_message(base_folder, folder_name, 'Unknown Media', sender_id, username, 'unknown', timestamp, chat_id, chat_type, chat_title)
         
         else:
-            save_message(base_folder, folder_name, 'Unknown Media', sender_id, username, 'unknown', timestamp, chat_type, chat_title)
+            save_message(base_folder, folder_name, 'Unknown Media', sender_id, username, 'unknown', timestamp, chat_id, chat_type, chat_title)
     
     except Exception as e:
         with open('error.log', 'a') as f:
